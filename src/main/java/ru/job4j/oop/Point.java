@@ -36,7 +36,7 @@ public class Point {
         double dist = a.distance(b);
         System.out.println(dist);
         Point c = new Point(0, 0, 0);
-        Point d = new Point(2, 0, 2);
+        Point d = new Point(2, 0, 0);
         double dist3d = c.distanse3d(d);
         System.out.println(dist3d);
     }
