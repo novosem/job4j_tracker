@@ -1,7 +1,6 @@
 package ru.job4j.tracker;
 
-import java.time.format.DateTimeFormatter;
-import java.util.Arrays;
+
 import java.util.Scanner;
 
 public class StartUI {
@@ -18,10 +17,10 @@ public class StartUI {
                 String name = scanner.nextLine();
                 Item item = new Item(name);
                 tracker.add(item);
-                } else if (select == 1) {
+            } else if (select == 1) {
                 Item[] allItem = tracker.findAll();
-                for (int i = 0; i < allItem.length; i++) {
-                    System.out.println(allItem[i]);
+                for (Item item : allItem) {
+                    System.out.println(item);
                 }
             } else if (select == 2) {
                 System.out.println("Enter Id to edit:");
@@ -29,7 +28,6 @@ public class StartUI {
                 System.out.println("Enter new Name:");
                 String name = scanner.nextLine();
                 Item newItem = new Item(name);
-                tracker.replace(id, newItem);
                 if (tracker.replace(id, newItem)) {
                     System.out.println("Edit complete");
                 } else {
@@ -38,11 +36,10 @@ public class StartUI {
             } else if (select == 3) {
                 System.out.println("Enter Id:");
                 int id = Integer.parseInt(scanner.nextLine());
-                tracker.delete(id);
                 if (tracker.delete(id)) {
-                    System.out.println("No id found");
-                } else {
                     System.out.println("Id = " + id + " deleted");
+                } else {
+                    System.out.println("No id found");
                 }
             }else  if (select == 4) {
                 System.out.println("Enter Id:");
@@ -58,8 +55,8 @@ public class StartUI {
                 String name = scanner.nextLine();
                 Item[] item = tracker.findByName(name);
                 if (item.length > 0) {
-                    for (int i = 0; i < item.length; i++) {
-                        System.out.println(item[i]);
+                    for (Item value : item) {
+                        System.out.println(value);
                     }
                 } else {
                     System.out.println("Entered name not found");
