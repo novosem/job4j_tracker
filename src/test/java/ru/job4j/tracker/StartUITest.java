@@ -21,8 +21,7 @@ public class StartUITest {
               new ExitProgramAction(out)
       };
       new StartUI(out).init(in, tracker, actions);
-      assertThat(out.toString(), is("===Create a new Item===\r\nДобавленная заявка: {Item id=1, " +
-              "name='Item name'}\r\n"));
+      assertThat(tracker.findAll()[0].getName(), is("Item name"));
    }
 
    @Test
@@ -30,7 +29,7 @@ public class StartUITest {
       Output output = new StubOutput();
       Tracker tracker = new Tracker();
       Item item = tracker.add(new Item("Replaced item"));
-      String replacedName = "=== Edit item ====\r\nЗаявка изменена успешно.\r\n";
+      String replacedName = "New item name";
       Input in = new StubInput(
               new String[] {"0", String.valueOf(item.getId()), "New item name", "1"}
       );
@@ -39,7 +38,7 @@ public class StartUITest {
               new ExitProgramAction(output)
       };
       new StartUI(output).init(in, tracker, actions);
-      assertThat(output.toString(), is(replacedName));
+      assertThat(tracker.findById(item.getId()).getName(), is(replacedName));
    }
 
    @Test
@@ -55,7 +54,7 @@ public class StartUITest {
               new ExitProgramAction(output)
       };
       new StartUI(output).init(in, tracker, actions);
-      assertThat(output.toString(), is("=== Delete item ====\r\nЗаявка удалена успешно.\r\n"));
+      assertThat(tracker.findById(item.getId()), is(nullValue()));
    }
 
 }
