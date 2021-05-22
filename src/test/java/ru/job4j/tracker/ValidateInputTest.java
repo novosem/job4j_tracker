@@ -46,11 +46,12 @@ public class ValidateInputTest {
         Input in = new StubInput(
                 new String[]{"-1", "0"}
         );
+        ValidateInput input = new ValidateInput(out, in);
         Tracker tracker = new Tracker();
         UserAction[] actions = new UserAction[]{
                 new ExitProgramAction(out)
         };
-        new StartUI(out).init(in, tracker, actions);
+        new StartUI(out).init(input, tracker, actions);
         String ln = System.lineSeparator();
         assertThat(out.toString(), is(
                 "Menu." + ln
