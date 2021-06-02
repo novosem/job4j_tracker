@@ -7,7 +7,7 @@ import java.util.List;
 public class Tracker {
     private final List<Item> items = new ArrayList<>(100);
     private int ids = 1;
-    private int size = 0;
+    //private int size = 0;
 
     private int indexOf(int id) {
         int rsl = -1;
