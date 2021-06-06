@@ -84,4 +84,15 @@ public class JobTest {
         );
         assertThat(rsl, greaterThan(0));
     }
+
+    @Test
+    public void whenCompatorSortByNameAndSortByPrority() {
+        Comparator<Job> cmpNamePriority =
+                new SortByNameJob().thenComparing(new JobSortByPriority());
+        int rsl = cmpNamePriority.compare(
+                new Job("Impl task", 0),
+                new Job("Fix bug", 1)
+        );
+        assertThat(rsl, greaterThan(0));
+    }
 }
