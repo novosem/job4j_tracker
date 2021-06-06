@@ -30,7 +30,7 @@ public class Tracker {
         return index != -1 ? items.get(index) : null;
     }
 
-    public List<Item> findAll () {
+    public List<Item> findAll() {
         return new ArrayList<>(items);
     }
 

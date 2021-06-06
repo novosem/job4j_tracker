@@ -5,7 +5,7 @@ import ru.job4j.collection.Order;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-public class Item implements Comparable<Item>{
+public class Item implements Comparable<Item> {
     private int id;
     private String name;
     private LocalDateTime created = LocalDateTime.now();
@@ -44,9 +44,9 @@ public class Item implements Comparable<Item>{
 
     @Override
     public String toString() {
-        return "{Item " +
-                "id=" + id +
-                ", name='" + name + '\'' + "}";
+        return "{Item "
+                + "id=" + id
+                + ", name='" + name + '\'' + "}";
     }
 
     @Override
@@ -56,11 +56,14 @@ public class Item implements Comparable<Item>{
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         Item item = (Item) o;
-        return Objects.equals(id, item.id) &&
-                Objects.equals(name, item.name);
+        return Objects.equals(id, item.id) && Objects.equals(name, item.name);
     }
 
     @Override

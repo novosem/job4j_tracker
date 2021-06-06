@@ -17,11 +17,11 @@ public class ItemTest {
         List<Item> items = Arrays.asList(
                 new Item(2, "QQQ"),
                 new Item(3, "WWW"),
-                new Item(1,"TTT")
+                new Item(1, "TTT")
         );
         Collections.sort(items);
         List<Item> item = Arrays.asList(
-                new Item(1,"TTT"),
+                new Item(1, "TTT"),
                 new Item(2, "QQQ"),
                 new Item(3, "WWW")
         );
@@ -33,13 +33,13 @@ public class ItemTest {
         List<Item> items = Arrays.asList(
                 new Item(2, "QQQ"),
                 new Item(3, "WWW"),
-                new Item(1,"TTT")
+                new Item(1, "TTT")
         );
         items.sort(Collections.reverseOrder());
         List<Item> item = Arrays.asList(
                 new Item(3, "WWW"),
                 new Item(2, "QQQ"),
-                new Item(1,"TTT")
+                new Item(1, "TTT")
         );
         assertThat(items, is(item));
     }
