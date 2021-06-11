@@ -15,7 +15,9 @@ public class FreezeStr {
             aa.put(array[i], i);
             bb.put(array1[i], i);
         }
-        for (){
+        HashMap<Character, Integer> cc = new HashMap<>();
+        for (char a : aa.keySet()) {
+            cc.computeIfPresent(a, (key, value) -> );
             return true;
         }
         return false;
