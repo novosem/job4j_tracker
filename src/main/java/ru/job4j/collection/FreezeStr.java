@@ -8,17 +8,24 @@ public class FreezeStr {
 
     public static boolean eq(String left, String right) {
         int j = 1;
-        boolean rsl = false;
+        boolean rsl = true;
         char[] array = left.toCharArray();
         char[] array1 = right.toCharArray();
         HashMap<Character, Integer> aa = new HashMap<>();
-        HashMap<Character, Integer> bb = new HashMap<>();
-        for (int i = 0; i < array.length; i++) {
-            aa.computeIfPresent(array[i], (key, value) -> j + 1);
-            aa.putIfAbsent(array[i], j);
-            bb.computeIfPresent(array1[i], (key, value) -> j + 1);
-            bb.putIfAbsent(array1[i], j);
+        for (char c : array) {
+            aa.computeIfPresent(c, (key, value) -> j + 1);
+            aa.putIfAbsent(c, j);
         }
-        return bb.equals(aa);
+        for (char a : array1) {
+            if (!aa.containsKey(a)) {
+                rsl = false;
+                break;
+            } else if (aa.get(a) == 1) {
+                aa.remove(a);
+            } else {
+                aa.replace(a, aa.get(a), aa.get(a) - 1);
+            }
+        }
+        return rsl;
             }
 }
