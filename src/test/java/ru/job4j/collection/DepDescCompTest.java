@@ -32,7 +32,7 @@ public class DepDescCompTest {
                 "k1/sk1/ssk2",
                 "k2/sk1/ssk2"
         );
-        assertThat(rsl, lessThan(0));
+        assertThat(rsl, greaterThan(0));
     }
 
     @Test
