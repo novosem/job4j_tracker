@@ -15,8 +15,7 @@ public class LambdaUsage {
             int first = Integer.valueOf(left.substring(0, left.indexOf(".")));
             int second = Integer.valueOf(right.substring(0, right.indexOf(".")));
             System.out.println("compare - " + second + " : " + first);
-            return second - first;
-        };
+            return second - first; };
         Arrays.sort(numbers, numStr);
     }
 }
