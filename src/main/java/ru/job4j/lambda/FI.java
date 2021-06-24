@@ -17,7 +17,8 @@ public class FI {
             System.out.println(i);
         }
         Comparator<String> cmpText = (left, right) -> left.compareTo(right);
-        Comparator<String> cmpDescSize = (left, right) -> Integer.compare(right.length(), left.length());
+        Comparator<String> cmpDescSize = (left, right) ->
+                Integer.compare(right.length(), left.length());
         String[] numbers = {
                 "1. Task",
                 "11. Task",
