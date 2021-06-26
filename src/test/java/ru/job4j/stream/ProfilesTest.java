@@ -21,8 +21,8 @@ public class ProfilesTest {
         List<Address> expect = List.of(
                 new Address("Moscow", "Popova", 6, 22),
                 new Address("Moscow", "Lenina", 34, 1),
-                new Address("Sochi", "Pushkina", 444, 4444),
-                new Address("Moscow", "Popova", 6, 22));
+                new Address("Sochi", "Pushkina", 444, 4444)
+                );
         Profiles rsl = new Profiles();
         List<Address> result = rsl.collect(profiless);
         assertEquals(expect, result);
