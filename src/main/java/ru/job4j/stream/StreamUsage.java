@@ -39,7 +39,7 @@ public class StreamUsage {
         integers.add(5);
         integers.add(-1);
         List<Integer> integers1 = integers.stream().filter(integer ->
-                integer >= 0).collect(Collectors.toList());
+                integer > 0).collect(Collectors.toList());
         integers1.forEach(System.out :: println);
     }
 }
