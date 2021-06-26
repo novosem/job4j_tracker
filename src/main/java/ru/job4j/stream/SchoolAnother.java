@@ -9,7 +9,7 @@ public class SchoolAnother {
     public Map<String, Student> collectt(List<Student> students) {
         return students.stream()
                 .collect(Collectors.toMap(Student::getSurname, student -> student,
-                        (f, s) -> s.equals(f) ? f : s
+                        (f, s) -> s
                 ));
     }
 }
