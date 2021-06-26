@@ -10,8 +10,6 @@ public class Profiles {
         Comparator<Address> comparator = (Comparator.comparing(Address::getCity));
         return profiles.stream()
                 .map(Profile::getAddress)
-                .collect(Collectors.toList())
-                .stream()
                 .sorted(comparator)
                 .distinct()
                 .collect(Collectors.toList());
