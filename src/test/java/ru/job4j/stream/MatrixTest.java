@@ -19,4 +19,13 @@ public class MatrixTest {
         List<Integer> expect = List.of(1, 2, 3, 4, 5, 6, 7, 8, 9);
         assertEquals(result, expect);
     }
+
+    @Test
+    public void matrixToListTest1() {
+        Integer[][] matrix = {{1, 2, 3}, {4, 5, 6}};
+        Matrixx rsl = new Matrixx();
+        List<Integer> result = rsl.matrixToList(matrix);
+        List<Integer> expect = List.of(1, 2, 3, 4, 5, 6);
+        assertEquals(result, expect);
+    }
 }
