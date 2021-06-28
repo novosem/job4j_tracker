@@ -7,15 +7,15 @@ import java.util.stream.Stream;
 
 public class Matrixx {
 
+    public List<Integer> matrixToList(Integer[][] matrix) {
+        return Stream.of(matrix).flatMap(Arrays :: stream).collect(Collectors.toList());
+    }
+
     public static void main(String[] args) {
         Integer[][] matrix = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
         List<Integer> rsl = Arrays.stream(matrix)
                 .flatMap(Arrays :: stream)
                 .collect(Collectors.toList());
         System.out.println(rsl);
-    }
-
-    public List<Integer> matrixToList(Integer[][] matrix) {
-        return Stream.of(matrix).flatMap(Arrays :: stream).collect(Collectors.toList());
     }
 }
