@@ -28,7 +28,7 @@ public class JobTest {
     public void whenComparatorByName() {
         List<Job> job = Arrays.asList(new Job("Impl task", 0),
         new Job("Fix bug", 1));
-        Collections.sort(job, new SortByNameJob());
+        job.sort(new SortByNameJob());
         List<Job> expect = List.of(
                 new Job("Fix bug", 1),
                 new Job("Impl task", 0)
@@ -63,15 +63,15 @@ public class JobTest {
 
     @Test
     public void whenComparatorDescByPriority() {
-        List<Job> job = List.of(new Job("Impl task", 0),
+        List<Job> jjob = List.of(new Job("Impl task", 0),
                 new Job("Fix bug", 1));
-        Collections.sort(job);
+        Collections.sort(jjob);
         List<Job> expect = List.of(
                 new Job("Impl task", 0),
                 new Job("Fix bug", 1)
 
         );
-        assertThat(job, is(expect));
+        assertThat(jjob, is(expect));
     }
 
     @Test
