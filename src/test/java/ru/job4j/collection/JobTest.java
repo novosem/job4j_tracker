@@ -29,7 +29,7 @@ public class JobTest {
         List<Job> job = Arrays.asList(new Job("Impl task", 0),
         new Job("Fix bug", 1));
         Collections.sort(job, new SortByNameJob());
-        List<Job> expect = Arrays.asList(
+        List<Job> expect = List.of(
                 new Job("Fix bug", 1),
                 new Job("Impl task", 0)
         );
@@ -38,10 +38,10 @@ public class JobTest {
 
     @Test
     public void whenComparatorByPriority() {
-        List<Job> job = Arrays.asList(new Job("Impl task", 0),
+        List<Job> job = List.of(new Job("Impl task", 0),
                 new Job("Fix bug", 1));
         Collections.sort(job, new JobDescByPriority());
-        List<Job> expect = Arrays.asList(
+        List<Job> expect = List.of(
                 new Job("Fix bug", 1),
                 new Job("Impl task", 0)
         );
@@ -50,10 +50,10 @@ public class JobTest {
 
     @Test
     public void whenComparatorDescByName() {
-        List<Job> job = Arrays.asList(new Job("Impl task", 0),
+        List<Job> job = List.of(new Job("Impl task", 0),
                 new Job("Fix bug", 1));
         Collections.sort(job, new JobDescByName());
-        List<Job> expect = Arrays.asList(
+        List<Job> expect = List.of(
                 new Job("Impl task", 0),
                 new Job("Fix bug", 1)
 
@@ -63,10 +63,10 @@ public class JobTest {
 
     @Test
     public void whenComparatorDescByPriority() {
-        List<Job> job = Arrays.asList(new Job("Impl task", 0),
+        List<Job> job = List.of(new Job("Impl task", 0),
                 new Job("Fix bug", 1));
         Collections.sort(job);
-        List<Job> expect = Arrays.asList(
+        List<Job> expect = List.of(
                 new Job("Impl task", 0),
                 new Job("Fix bug", 1)
 
